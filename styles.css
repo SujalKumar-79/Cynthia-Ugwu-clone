@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "General Sans";
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+#mini-circle {
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 9999;
+    position: fixed;
+    /* FIX: This makes the circle ignore mouse events (like scrolling), 
+       allowing them to pass through to the elements underneath. */
+    pointer-events: none;
+    top: var(--mouse-y, 0);
+    left: var(--mouse-x, 0);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+#main {
+    width: 100%;
+    background-color: black;
+}
+
+
+/* */
+
+
+/* Hero section */
+
+#hero {
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 35px 45px;
+    color: #fff;
+}
+
+#nav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+}
+
+#heading {
+    margin-top: 30px;
+}
+
+#heading h1 {
+    margin-left: 40px;
+    opacity: 0.6;
+    line-height: 1;
+    font-size: 10vw;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+#heading #second-h1 {
+    margin-left: 200px;
+}
+
+.blocktext {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+}
+
+.blocktext h5 {
+    letter-spacing: 2px;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+#sub-headings {
+    margin-top: 100px;
+    padding-right: 50px;
+}
+
+#sub-headings h5 {
+    letter-spacing: 1px;
+    text-align: right;
+    text-transform: uppercase;
+    margin-top: 0.4vw;
+    font-size: medium;
+    font-weight: 900;
+}
+
+#hero-footer {
+    padding: 0 2vw;
+    width: 100%;
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hero-footer a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#hero-footer #icon-set {
+    display: flex;
+    gap: 5px;
+}
+
+#hero-footer .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Hero section completed */
+
+
+/* */
+
+
+/* Second Section */
+
+#second {
+    color: #fff;
+    width: 100%;
+    background-color: black;
+    padding-top: 130px;
+    padding-right: 13vw;
+    padding-left: 3vw;
+    padding-bottom: 100px;
+}
+
+#second .elements {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.7vw 0vw;
+    width: 100%;
+    border-top: 1px solid #888;
+    transition: all ease-in 0.4s;
+}
+
+#second .elements:hover {
+    padding-left: 4.3vw;
+    opacity: 0.3;
+}
+
+.elements h1 {
+    text-transform: uppercase;
+    font-size: 6.5vw;
+    opacity: 0.6;
+    letter-spacing: 3px;
+}
+
+.elements h6 {
+    font-size: large;
+}
+
+#second #view-all-work {
+    background-color: transparent;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all ease-in 0.4s;
+}
+
+#second #view-all-work sup {
+    font-size: 10px;
+    margin-left: 2px;
+    opacity: 0.8;
+    position: relative;
+    top: -2px;
+}
+
+#second #view-all-work:hover {
+    background-color: white;
+    color: black;
+}
+
+.elements img {
+    opacity: 1 !important;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    height: 130%;
+}
+
+
+/* Second section completed */
+
+
+/* */
+
+
+/* Third section */
+
+#third {
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding-top: 130px;
+    padding-bottom: 100px;
+}
+
+#third #moving-company-names {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    height: 20vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#marquee {
+    display: flex;
+    gap: 200px;
+    animation: scroll 40s linear infinite;
+}
+
+#marquee img {
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+#third #aboutme .description {
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+#third #aboutme .description p {
+    margin: 0;
+}
+
+#third #aboutme .description h6 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+#third #aboutme {
+    margin-top: 40vh;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+#third #aboutme .profile-photo img {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#third #aboutme .description .lets-talk-button {
+    margin-top: 50px;
+    background-color: transparent;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all ease-in 0.4s;
+}
+
+#third #aboutme .description .lets-talk-button:hover {
+    background-color: white;
+    color: black;
+}
+
+#third #subscribe-yt {
+    margin-top: 20vh;
+    margin-left: 3vw;
+}
+
+#third #subscribe-yt h5 {
+    opacity: 0.5;
+    text-transform: uppercase;
+    word-spacing: 2px;
+}
+
+#third #subscribe-yt a {
+    text-decoration: none;
+    color: white;
+    word-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Third section completed */
+
+
+/* */
+
+
+/* Footer section */
+
+footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+footer #footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 3vw;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer #footer #rights-and-time {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: larger;
+    flex-wrap: wrap;
+}
+
+#footer #social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+#footer #social-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+}
